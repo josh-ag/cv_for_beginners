@@ -8,8 +8,8 @@ image = cv.imread('images/cat.png')
 # @desc - RESIZE AND RESCALE
 #======================================
 def rescaleImage(frame,scale=.75):
-    width = int(frame.shape[1]*scale)
     height = int(frame.shape[0]*scale)
+    width = int(frame.shape[1]*scale)
     
     dimensions = (width,height)
 
