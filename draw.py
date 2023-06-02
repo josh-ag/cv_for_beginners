@@ -3,10 +3,12 @@ import cv2 as cv
 import numpy as np
 
 # create a canvas
+# np.zeros((x,y,color_channel), data_type)
 blank = np.zeros((500,800,3), dtype='uint8')
-# color the entire canvas
-blank[:] = 255,0,0
-# color portion of canva
+# color the entire canvas else black
+# blank[:] = 255,0,0
+
+# color only portion of the canva
 # blank[100:300,300:600] = 0,255,0
 # display image
 # cv.imshow('Canvas', blank)
@@ -32,4 +34,4 @@ cv.imshow('Text On Image', blank)
 
 # await keypress to close window
 cv.waitKey(0)
-# cv.destroyAllWindows()
+cv.destroyAllWindows()

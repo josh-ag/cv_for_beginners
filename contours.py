@@ -1,12 +1,14 @@
 import cv2 as cv
 
-img = cv.imread('images/cat.png')
+# read image grayscale*
+img = cv.imread('images/cat.png',2)
 
-gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-cv.imshow('Gray Image', gray)
+# gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+cv.imshow('Gray Image', img)
 
 # blur image
-blur = cv.GaussianBlur(gray, (5,5), cv.BORDER_DEFAULT)
+blur = cv.GaussianBlur(img, (7,7), cv.BORDER_DEFAULT)
+cv.imshow('Blur Image', blur)
 
 #edge detection
 edges = cv.Canny(blur,50,70)

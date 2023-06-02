@@ -1,22 +1,18 @@
-
 import cv2 as cv
 
-# read video
-# camera feed 
-camera_vid = cv.VideoCapture(0)
-# from path 
+# read video from camera feed
+camera = cv.VideoCapture(0)
+# read from vid_file
 video = cv.VideoCapture('videos/ai.mp4')
 
 # resize frame (for live feeds only) 
-def resize_frame(width=1200,height=720,brightness=20):
-    camera_vid.set(3,width)
-    camera_vid.set(4, height)
-    camera_vid.set(10,brightness)
-
-
+# def resize_frame(width=400,height=400,brightness=200):
+#     camera.set(3,width)
+#     camera.set(4, height)
+#     camera.set(10,brightness)
 
 # rescale frame
-def rescale_frame(frame,scale=1.1):
+def rescale_frame(frame,scale=1.2):
     width = int(frame.shape[1]*scale)
     height = int(frame.shape[0]*scale)
 
@@ -25,16 +21,16 @@ def rescale_frame(frame,scale=1.1):
 
 # @desc - read through video frames
 while True:
-    _,frame = video.read()
-    isTrue, frame = camera_vid.read()
+    # _,frame = video.read()
+    isTrue, frame = camera.read()
 
-    # resize_frame = rescale_frame(frame)
-    cv.imshow('Default Video', frame)
-    # cv.imshow('Resized Video', resize_frame)
+    resized = rescale_frame(frame)
+    cv.imshow('Video', frame)
+    cv.imshow('Resized Video', resized)
 
     if cv.waitKey(20) & 0xFF == ord('d'):
         break
 
 # await keypress to close window
-camera_vid.release()
+camera.release()
 cv.destroyAllWindows()
