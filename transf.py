@@ -53,4 +53,6 @@ flip = cv.flip(resized,-1)
 cv.imshow('Flipped Image', flip)
 
 
+# close window on keypress & free mem_space
 cv.waitKey(0)
+cv.destroyAllWindows()

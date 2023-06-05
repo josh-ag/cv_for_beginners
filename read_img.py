@@ -1,6 +1,9 @@
 
 import cv2 as cv
 
+# print version of openCV being installed
+print(cv.__version__)
+
 # read image
 img = cv.imread('images/cat.png')
 

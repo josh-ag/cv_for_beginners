@@ -3,6 +3,7 @@ import cv2 as cv
 # read image grayscale*
 img = cv.imread('images/cat.png',2)
 
+# turn image grayscale
 # gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Gray Image', img)
 
@@ -19,6 +20,5 @@ cv.imshow('Edges', edges)
 contours,hierarchies = cv.findContours(edges,cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
 
 print(f'There are ${contours} in the image')
-
 
 cv.waitKey(0)
