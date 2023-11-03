@@ -28,8 +28,9 @@ def resize_image(frame,scale=.55):
 # cv.imshow('Dilated Image',dilated)
 
 # resize image
-# resize = cv.resize(img,(800,800),interpolation=cv.INTER_LINEAR)
-# cv.imshow('Resize Image', resize)
+
+resize = cv.resize(img,(800,800),interpolation=cv.INTER_CUBIC)
+cv.imshow('Resize Image', resize)
 
 
 # crop image 

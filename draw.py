@@ -8,7 +8,7 @@ blank = np.zeros((500,800,3), dtype='uint8')
 # color the entire canvas else black
 # blank[:] = 255,0,0
 
-# color only portion of the canva
+# color cropped portion of the canva
 # blank[100:300,300:600] = 0,255,0
 # display image
 # cv.imshow('Canvas', blank)
@@ -29,9 +29,8 @@ cv.line(blank, (blank.shape[1]//2,blank.shape[0]//2),(400, 500), (255,255,255),t
 # cv.imshow('Line', blank)
 
 # write on image
-cv.putText(blank,'Hello World!', (blank.shape[1]//2,100),cv.FONT_HERSHEY_TRIPLEX,1.0,(255,255,0),thickness=2)
-cv.imshow('Text On Image', blank)
+cv.putText(blank,'Hello World!', (500,400),cv.FONT_HERSHEY_DUPLEX,1.0,(255,255,0),thickness=2)
+cv.imshow('Text', blank)
 
 # await keypress to close window
 cv.waitKey(0)
-cv.destroyAllWindows()
